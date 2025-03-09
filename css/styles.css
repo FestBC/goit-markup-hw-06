@@ -54,7 +54,7 @@ textarea {
     resize: none;
 }
 
-.modal-menu {
+.modal-menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -74,7 +74,7 @@ textarea {
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-menu.is-open {
+.modal-menu-overlay.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -186,11 +186,11 @@ textarea {
     top: 50%;
     left: 50%;
 
-    padding: 72px 24px 24px 24px;
+    padding: 72px 16px 24px 16px;
 
     border-radius: 4px;
-    width: 408px;
-    min-height: 584px;
+    width: 288px;
+    min-height: 623px;
 
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #fcfcfc;
@@ -281,7 +281,7 @@ textarea {
 .modal-form .container-form {
     position: relative;
 
-    width: 360px;
+    width: 256px;
     height: 40px;
 }
 
@@ -305,7 +305,7 @@ textarea {
     width: 100%;
     height: 40px;
 
-    padding-left: 38px;
+    padding-left: 34px;
 
     outline: transparent;
     background-color: transparent;
@@ -857,6 +857,15 @@ textarea {
 
 /* TABLET */
 @media (max-width: 767px) {
+    .label-form[for="user-privacy"] {
+        display: flex;
+        align-items: center;
+    }
+
+    .label-form[for="user-privacy"] span:last-of-type {
+        width: 231.46px;
+    }
+
     .container .navigation .navigation-list,
     .header .contacts {
         position: absolute;
@@ -893,6 +902,33 @@ textarea {
 }
 
 @media (min-width: 768px) {
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        padding: 72px 24px 24px 24px;
+
+        border-radius: 4px;
+        width: 408px;
+        min-height: 584px;
+
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+        background-color: #fcfcfc;
+
+        transform: translate(-50%, -50%);
+
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .modal-form .container-form {
+        width: 360px;
+    }
+
+    .modal-form .input-form {
+        padding-left: 38px;
+    }
+
     .header .container {
         min-height: 72px;
     }
